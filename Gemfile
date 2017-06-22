@@ -11,16 +11,26 @@ gem 'pg'
 
 gem 'puma', '~> 3.0'
 
+gem 'administrate'
+gem 'bourbon'
 gem 'coffee-rails', '~> 4.2'
+gem 'foundation-icons-sass-rails'
+gem 'foundation-rails'
 gem 'haml-rails', '~> 0.9'
-gem 'high_voltage', '~> 3.0.0'
+gem 'httparty'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
+gem 'mail_form'
 gem 'sass-rails', '~> 5.0'
+gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'pry-rails'
   gem 'rspec-rails'
+end
+
+group :development do
+  gem 'listen'
 end

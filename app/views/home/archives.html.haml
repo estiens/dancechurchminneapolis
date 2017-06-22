@@ -1,0 +1,20 @@
+%body
+  .top-bar
+    .top-bar-right
+      %ul.menu
+        %li
+          %a.rounded{:href => "/"}
+            HOME
+        %li.active
+          %a.rounded{:href => "/archives"}
+            ARCHIVES
+        %li
+          %a.rounded{:href => "/contact"}
+            CONTACT
+  .row
+    - @archives.each do |archive|
+      .large-3.columns
+        = archive.title
+        = image_tag(archive.image_url)
+        = url_to_image(archive.image_url)
+        = raw(archive.embed_html)

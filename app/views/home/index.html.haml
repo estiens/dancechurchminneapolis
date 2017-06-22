@@ -1,0 +1,78 @@
+!!!
+/[if IE 9] <html class="lt-ie10" lang="en" >
+/[if IE 10] <html class="ie10" lang="en" >
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "UTF-8"}/
+    %title Dance Church Minneapolis
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato", :rel => "stylesheet"}/
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  %body
+    .top-bar
+      .top-bar-right
+        %ul.menu
+          %li.active
+            %a.rounded{:href => "/"}
+              HOME
+          %li
+            %a.rounded{:href => "/archives"}
+              ARCHIVES
+          %li
+            %a.rounded{:href => "/contact"}
+              CONTACT
+    .top-section
+      .row
+        .large-12.column
+          %h1.text-center.header_title
+            Dance Church Minneapolis
+      .row.large-12.column.subheader_title.text-center
+        %h2
+          An intentional space to celebrate life by dancing together.
+          %br
+          Every Sunday. 11am-1pm. Tapestry Folkdance Center.
+      .row
+        %hr
+    .middle-section
+      .row
+        .large-6.column#reminders
+          %p
+            A few church-etiquette reminders:
+            %ul
+              %li
+                $5 suggested donation for adults, kids are free (and please don't let money keep you from attending)
+              %li
+                Come anytime between 11 and 1
+              %li
+                Dance Church is a secular event, with no religious affiliation
+              %li
+                Bring a yoga mat if you like — there's room to stretch
+              %li
+                The main space is intended for dancing, meditating, and movement. Please use the hallway and kitchen space for conversations and refreshments.
+              %li
+                Please limit photography and use discretion when posting photos or videos, as we want everyone to feel safe and comfortable in their self-expression
+              %li
+                We like to keep the main space clear, open, and devoted to dancing, so please no table displays (product, promotional, religious, etc.)
+              %li
+                Come to dance!
+        .large-5.column.text-right
+          -if @first_scheduled_date
+            .row.block.red
+              .date_announce
+                = @first_scheduled_date.date.strftime("%D")
+              .dj_announce
+                = @first_scheduled_date.no_dance_church ? 'No Dance Church Today!' : @first_scheduled_date.dj&.name
+          -if @second_scheduled_date
+            .row.block.blue
+              .date_announce
+                = @second_scheduled_date.date.strftime("%D")
+              .dj_announce
+                = @second_scheduled_date.no_dance_church ? 'No Dance Church Today!' : @second_scheduled_date.dj&.name
+          -if @third_scheduled_date
+            .row.block.green
+              .date_announce
+                = @third_scheduled_date.date.strftime("%D")
+              .dj_announce
+                = @third_scheduled_date.no_dance_church ? 'No Dance Church Today!' : @second_scheduled_date.dj&.name
