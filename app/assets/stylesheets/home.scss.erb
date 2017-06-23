@@ -47,10 +47,18 @@ h6 {
   line-height: 1.3;
   margin-bottom: 0.8125rem;
 }
+
 p {
   font-size: 2em;
   line-height: 1.4;
   margin-bottom: 0.8125rem;
+}
+
+
+@media only screen and (max-width: 40em) {
+  p {
+    font-size: 1rem;
+  }
 }
 
 body {
@@ -69,6 +77,14 @@ body {
   letter-spacing: 10px;
 }
 
+
+@media only screen and (max-width: 40em) {
+  .header_title {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+  }
+}
+
 .subheader_title {
   color: #1ABC9C;
 }
@@ -76,6 +92,13 @@ body {
 #facebook-menu-icon {
   color: #1779ba;
   font-size: 1.8rem;
+}
+
+
+@media only screen and (max-width: 40em) {
+  #facebook-menu-icon {
+    display: none;
+  }
 }
 
 #reminders {
