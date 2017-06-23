@@ -34,6 +34,7 @@ group :production do
   gem 'dalli'
   gem 'newrelic_rpm'
   gem 'rails_12factor'
+  gem 'responders'
 end
 
 group :development, :test do
