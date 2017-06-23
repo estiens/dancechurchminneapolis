@@ -1,16 +1,16 @@
 = render 'topbar'
 .top-section
-  .row
+  .row.color3
     .large-12.column
       %h1.text-center.header_title
         Dance Church Minneapolis
-  .row.large-12.column.subheader_title.text-center
+  .row.large-12.column.subheader_title.text-center.color3
     %h2
       An intentional space to celebrate life by dancing together.
       %br
       Every Sunday. 11am-1pm. Tapestry Folkdance Center.
-  .row
-    %hr
+  .row.bottom_border.color3
+    -# %hr
 .middle-section
   .row
     .large-6.column#reminders
@@ -35,19 +35,19 @@
             Come to dance!
     .large-5.column.text-right
       -if @first_scheduled_date
-        .row.block.red
+        .row.block.color5_t
           .date_announce
             = @first_scheduled_date.date.strftime("%D")
           .dj_announce
             = @first_scheduled_date.no_dance_church ? 'No Dance Church Today!' : @first_scheduled_date.dj&.name
       -if @second_scheduled_date
-        .row.block.blue
+        .row.block.color1_t
           .date_announce
             = @second_scheduled_date.date.strftime("%D")
           .dj_announce
             = @second_scheduled_date.no_dance_church ? 'No Dance Church Today!' : @second_scheduled_date.dj&.name
       -if @third_scheduled_date
-        .row.block.green
+        .row.block.color3_t
           .date_announce
             = @third_scheduled_date.date.strftime("%D")
           .dj_announce
