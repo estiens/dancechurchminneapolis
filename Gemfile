@@ -27,7 +27,10 @@ gem 'simple_form'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
-gem 'rails_12factor', group: :production
+group :production do
+  gem 'rails_12factor'
+  gem 'newrelic_rpm'
+end
 
 group :development, :test do
   gem 'pry-rails'
