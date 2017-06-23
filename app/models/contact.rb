@@ -9,8 +9,8 @@ class Contact < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-      subject: 'My Contact Form',
-      to: 'your_email@example.org',
+      subject: 'Contact from Dance Church Website',
+      to: ENV['TO_EMAIL'] || 'your_email@example.org',
       from: %("#{name}" <#{email}>)
     }
   end
