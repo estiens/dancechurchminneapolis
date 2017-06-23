@@ -57,14 +57,13 @@
 .bottom-section
   .row
     .large-6.columns
-      .mapbox.rounded
+      .mapbox.text-center
         %iframe{:allowfullscreen => "", :frameborder => "0", :height => "450", :src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2824.4442492040644!2d-93.22700524872243!3d44.93463617653991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f62849bfbe0d43%3A0xd87b01c93eca04f4!2sTapestry+Folkdance+Center!5e0!3m2!1sen!2sus!4v1498183337140", :style => "border:0", :width => "500px"}
     .large-6.columns.text-center
-      %br
-      %br
-      %h3 PARKING NOTES
-      %p
-        There is Tapestry parking across the street. If you park in other lots, make sure you are not parking in private spaces.
+      .parking-box
+        %h3 PARKING NOTES
+        %p
+          There is Tapestry parking across the street. If you park in other lots, make sure you are not parking in private spaces.
 :javascript
   $(document).ready( function() {
     $('#home-link').addClass( 'active' );

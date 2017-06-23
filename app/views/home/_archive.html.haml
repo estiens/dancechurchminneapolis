@@ -1,0 +1,12 @@
+.large-3.columns
+  .dj-card.card{class: "#{archive.dj.slug_name} year-#{archive.date.strftime('%Y')}"}
+    .card-section
+      .dj_image
+        = image_tag(archive.image_url)
+      .dj_iframe
+        = raw(archive.embed_html)
+    .card-section
+      .dj_name
+        = archive.dj.name
+      %a.mixcloud_link{href: archive.mixcloud_url}
+        = archive.title
