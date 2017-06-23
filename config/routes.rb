@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'archives', to: 'home#archives'
   get '/contact', to: 'contacts#new'
-  resources 'contacts', only: [:new, :create]
+  resources 'contacts', only: %i[new create]
+  mount Attachinary::Engine => '/attachinary'
 end

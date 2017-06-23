@@ -13,6 +13,8 @@ gem 'pg'
 gem 'puma', '~> 3.0'
 
 gem 'administrate'
+gem 'attachinary'
+gem 'cloudinary'
 gem 'bourbon'
 gem 'coffee-rails', '~> 4.2'
 gem 'foundation-icons-sass-rails'
@@ -35,6 +37,7 @@ group :production do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry-rails'
   gem 'rspec-rails'
 end

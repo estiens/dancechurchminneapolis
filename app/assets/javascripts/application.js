@@ -15,6 +15,11 @@
 //= require foundation
 //= require turbolinks
 //= require modernizr
+//= require jquery.ui.widget
+//= require jquery.iframe-transport
+//= require jquery.fileupload
+//= require jquery.cloudinary
+//= require attachinary
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {

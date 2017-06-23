@@ -1,4 +1,4 @@
-require "administrate/base_dashboard"
+require 'administrate/base_dashboard'
 
 class ArchiveDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
@@ -14,6 +14,9 @@ class ArchiveDashboard < Administrate::BaseDashboard
     date: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    alternative_picture: Field::AttachinaryField,
+    alternative_url: Field::String,
+    title: Field::String
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -21,31 +24,36 @@ class ArchiveDashboard < Administrate::BaseDashboard
   #
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
-  COLLECTION_ATTRIBUTES = [
-    :dj,
-    :id,
-    :mixcloud_url,
-    :date,
+  COLLECTION_ATTRIBUTES = %i[
+    dj
+    title
+    mixcloud_url
+    date
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
-  SHOW_PAGE_ATTRIBUTES = [
-    :dj,
-    :id,
-    :mixcloud_url,
-    :date,
-    :created_at,
-    :updated_at,
+  SHOW_PAGE_ATTRIBUTES = %i[
+    dj
+    title
+    mixcloud_url
+    alternative_picture
+    alternative_url
+    date
+    created_at
+    updated_at
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [
-    :dj,
-    :mixcloud_url,
-    :date,
+  FORM_ATTRIBUTES = %i[
+    dj
+    mixcloud_url
+    title
+    alternative_picture
+    alternative_url
+    date
   ].freeze
 
   # Overwrite this method to customize how archives are displayed

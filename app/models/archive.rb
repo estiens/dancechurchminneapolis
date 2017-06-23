@@ -2,6 +2,8 @@ class Archive < ApplicationRecord
   belongs_to :dj
   before_save :write_attributes_from_mixcloud
 
+  has_attachment :alternative_picture, accept: [:jpg, :png, :gif]
+
   def write_attributes_from_mixcloud
     return unless mixcloud_url && !image_url
     begin

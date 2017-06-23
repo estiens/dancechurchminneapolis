@@ -41,12 +41,11 @@ class DjDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :archives,
-    :name,
+    :name
   ].freeze
 
   def display_resource(dj)
-    dj.name
+    dj.name.to_s
   end
 
   # Overwrite this method to customize how djs are displayed

@@ -1,12 +1,23 @@
 .large-3.columns
-  .dj-card.card{class: "#{archive.dj.slug_name} year-#{archive.date.strftime('%Y')}"}
-    .card-section
-      .dj_image
-        = image_tag(archive.image_url)
-      .dj_iframe
-        = raw(archive.embed_html)
-    .card-section
-      .dj_name
-        = archive.dj.name
-      %a.mixcloud_link{href: archive.mixcloud_url}
-        = archive.title
+  -if archive.mixcloud_url?
+    .dj-card.card{class: "#{archive.dj.slug_name} year-#{archive.date.strftime('%Y')}"}
+      .card-section
+        .dj_image
+          = image_tag(archive.image_url)
+        .dj_iframe
+          = raw(archive.embed_html)
+      .card-section
+        .dj_name
+          = archive.dj.name
+        %a.mixcloud_link{href: archive.mixcloud_url}
+          = archive.title
+  -else
+    .dj-card.card{class: "#{archive.dj.slug_name} year-#{archive.date.strftime('%Y')}", style: "min-height: 493px"}
+      .card-section
+        .dj_image
+          = cl_image_tag(archive.alternative_picture.path, { size: '300x200' })
+      .card-section
+        .dj_name
+          = archive.dj.name
+        %a.mixcloud_link{href: archive.alternative_url}
+          = archive.title
