@@ -4,12 +4,11 @@
     %h1 Contact Us
     = render 'contactform'
   .large-4.columns.text-right
-    %br
-    %br
-    %p
-      Please feel free to get in touch with us about any concerns you might have. Also, make sure to check us out on
-      %a{href:'https://www.facebook.com/groups/428438187299569/'}
-        facebook!
+    #contact-info-box
+      %p
+        Please feel free to get in touch with us about any concerns you might have. Also, make sure to check us out on
+        %a{href:'https://www.facebook.com/groups/428438187299569/'}
+          facebook!
 :javascript
   $(document).ready( function() {
     $('#contact-link').addClass( 'active' );
