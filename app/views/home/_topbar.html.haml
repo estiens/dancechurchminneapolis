@@ -1,7 +1,7 @@
 .top-bar
   .top-bar-left
-    %a#facebook-menu-icon{href: 'https://www.facebook.com/groups/428438187299569/'}
-      .i.fi-social-facebook
+    .quote.fade.menu-text
+      = Quote.all.shuffle.first&.text
   .top-bar-right
     %ul.menu
       %li#home-link
@@ -13,3 +13,6 @@
       %li#contact-link
         %a{:href => "/contacts/new"}
           CONTACT
+      %li#facebook-link
+        %a{href: 'https://www.facebook.com/groups/428438187299569/'}
+          FACEBOOK
