@@ -1,3 +1,4 @@
+ruby '2.3.1'
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
@@ -28,8 +29,9 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
 group :production do
-  gem 'rails_12factor'
+  gem 'dalli'
   gem 'newrelic_rpm'
+  gem 'rails_12factor'
 end
 
 group :development, :test do

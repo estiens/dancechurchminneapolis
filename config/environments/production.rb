@@ -8,6 +8,10 @@ ActionMailer::Base.smtp_settings = {
   enable_starttls_auto: true
 }
 
+if ENV['MEMCACHEDCLOUD_SERVERS']
+  config.cache_store = :dalli_store, ENV['MEMCACHEDCLOUD_SERVERS'].split(','), { username: ENV['MEMCACHEDCLOUD_USERNAME'], password: ENV['MEMCACHEDCLOUD_PASSWORD'] }
+end
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
