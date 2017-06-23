@@ -1,20 +1,34 @@
-%body
-  .top-bar
-    .top-bar-right
-      %ul.menu
-        %li
-          %a.rounded{:href => "/"}
-            HOME
-        %li.active
-          %a.rounded{:href => "/archives"}
-            ARCHIVES
-        %li
-          %a.rounded{:href => "/contact"}
-            CONTACT
-  .row
-    - @archives.each do |archive|
-      .large-3.columns
-        = archive.title
-        = image_tag(archive.image_url)
-        = url_to_image(archive.image_url)
-        = raw(archive.embed_html)
+= render 'topbar'
+.row
+  .large-12.columns
+    .button-group
+    %a.button{class: 'dj-toggle', id: 'all-djs'}
+      All sets
+    %a.button.dj-toggle#year-2017
+      2017
+    %a.button.dj-toggle#year-2016
+      2016
+    %a.button.dj-toggle#year-2015
+      2015
+    %a
+    - @djs.each do |dj|
+      %a.button{class: 'dj-toggle', id: "#{dj.slug_name}"}
+        = dj.name
+.row.large-12.columns
+  - @archives.each do |archive|
+    .large-3.columns
+      .dj-card.card{class: "#{archive.dj.slug_name} year-#{archive.date.strftime('%Y')}"}
+        .card-section
+          .dj_image
+            = image_tag(archive.image_url)
+          .dj_iframe
+            = raw(archive.embed_html)
+        .card-section
+          .dj_name
+            = archive.dj.name
+          %a.mixcloud_link{href: archive.mixcloud_url}
+            = archive.title
+:javascript
+  $(document).ready( function() {
+    $('#archives-link').addClass( 'active' );
+  } );

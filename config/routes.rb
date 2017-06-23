@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   end
   root to: 'home#index'
   get 'archives', to: 'home#archives'
-  get 'contact', to: 'home#contact'
+  get '/contact', to: 'contacts#new'
+  resources 'contacts', only: [:new, :create]
 end

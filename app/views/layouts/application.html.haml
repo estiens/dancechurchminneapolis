@@ -4,13 +4,22 @@
     %meta{ :charset => "utf-8" }
 
     %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
-
-    %title= content_for?(:title) ? yield(:title) : "Untitled"
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1", :name => "viewport"}/
+    %link{:href => "http://fonts.googleapis.com/css?family=Lato", :rel => "stylesheet"}/
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    %title Dance Church Minneapolis
 
     = stylesheet_link_tag "application"
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tag
 
   %body
-
+    - flashes = {:notice => 'success', :alert => 'standard', :error => 'alert', :secondary => 'secondary'}
+    .flash-messages
+      - flashes.each do |key, value|
+        - if flash[key]
+          .alert-box{:class => value, :data => { :alert => '' } }
+            = flash[key]
+            = link_to '&times;'.html_safe, '#', :class => 'close'
     = yield

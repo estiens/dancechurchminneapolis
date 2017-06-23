@@ -17,4 +17,6 @@
 //= require modernizr
 //= require_tree .
 
-$(document).foundation();
+$(document).on('turbolinks:load', function() {
+  $(function(){ $(document).foundation(); });
+});
