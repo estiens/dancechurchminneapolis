@@ -10,7 +10,7 @@ gem 'rails', '~> 5.0.3'
 
 gem 'pg'
 
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 4.3'
 
 gem 'administrate'
 gem 'attachinary'
